@@ -1,0 +1,88 @@
+-----------------------------------------------------------------------------
+Region: us-east-1
+StackName: tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-013d8aab70a3480594ace169d24c713f
+*****************************************************************************
+ResourceStatusReason:  
+The following resource(s) failed to create: [VPCStack].
+*****************************************************************************
+*****************************************************************************
+Events:  
+TimeStamp                         ResourceStatus      ResourceType                LogicalResourceId                                                                                    ResourceStatusReason
+--------------------------------  ------------------  --------------------------  ---------------------------------------------------------------------------------------------------  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2020-06-09 17:40:32.755000+00:00  CREATE_FAILED       AWS::CloudFormation::Stack  tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-013d8aab70a3480594ace169d24c713f  The following resource(s) failed to create: [VPCStack].
+2020-06-09 17:40:31.857000+00:00  CREATE_FAILED       AWS::CloudFormation::Stack  VPCStack                                                                                             Embedded stack arn:aws:cloudformation:us-east-1:584003659997:stack/tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-013d8aab70-VPCStack-ON1UR1HAMGME/2b290f10-aa78-11ea-b472-0e05d1a3c102 was not successfully created: The following resource(s) failed to create: [PrivateSubnet2A, PrivateSubnet1A, PrivateSubnet3A].
+2020-06-09 17:39:29.266000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack  VPCStack                                                                                             Resource creation Initiated
+2020-06-09 17:39:27.916000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack  VPCStack
+2020-06-09 17:39:21.119000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack  tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-013d8aab70a3480594ace169d24c713f  User Initiated
+*****************************************************************************
+-----------------------------------------------------------------------------
+Tested on: Tuesday, 09. June 2020 05:41PM
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+Region: us-east-1
+StackName: tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-013d8aab70-VPCStack-ON1UR1HAMGME
+*****************************************************************************
+ResourceStatusReason:  
+The following resource(s) failed to create: [PrivateSubnet2A, PrivateSubnet1A,
+PrivateSubnet3A].
+*****************************************************************************
+*****************************************************************************
+Events:  
+TimeStamp                         ResourceStatus      ResourceType                         LogicalResourceId                                                                                    ResourceStatusReason
+--------------------------------  ------------------  -----------------------------------  ---------------------------------------------------------------------------------------------------  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2020-06-09 17:40:25.267000+00:00  CREATE_FAILED       AWS::CloudFormation::Stack           tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-013d8aab70-VPCStack-ON1UR1HAMGME  The following resource(s) failed to create: [PrivateSubnet2A, PrivateSubnet1A, PrivateSubnet3A].
+2020-06-09 17:40:22.423000+00:00  CREATE_FAILED       AWS::EC2::Subnet                     PrivateSubnet1A                                                                                      Value ( kubernetes.io/cluster/tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-013d8aab70a3480594ace169d24c713f-us-east-1 ) for parameter key is invalid. Tag key exceeds the maximum length of 128 characters (Service: AmazonEC2; Status Code: 400; Error Code: InvalidParameterValue; Request ID: d733b7f7-7bdc-4759-8fe9-5ff8d9d1b69e)
+2020-06-09 17:40:22.045000+00:00  CREATE_FAILED       AWS::EC2::Subnet                     PrivateSubnet3A                                                                                      Value ( kubernetes.io/cluster/tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-013d8aab70a3480594ace169d24c713f-us-east-1 ) for parameter key is invalid. Tag key exceeds the maximum length of 128 characters (Service: AmazonEC2; Status Code: 400; Error Code: InvalidParameterValue; Request ID: 99b5d248-eb88-4b66-ab48-5b5fa5b5df6f)
+2020-06-09 17:40:21.935000+00:00  CREATE_FAILED       AWS::EC2::Subnet                     PrivateSubnet2A                                                                                      Value ( kubernetes.io/cluster/tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-013d8aab70a3480594ace169d24c713f-us-east-1 ) for parameter key is invalid. Tag key exceeds the maximum length of 128 characters (Service: AmazonEC2; Status Code: 400; Error Code: InvalidParameterValue; Request ID: c2ffb4fe-df2a-4111-8a4c-beaedba220d0)
+2020-06-09 17:40:21.818000+00:00  CREATE_COMPLETE     AWS::EC2::Subnet                     PublicSubnet2
+2020-06-09 17:40:21.774000+00:00  CREATE_COMPLETE     AWS::EC2::Subnet                     PublicSubnet1
+2020-06-09 17:40:21.657000+00:00  CREATE_COMPLETE     AWS::EC2::Subnet                     PublicSubnet3
+2020-06-09 17:40:20.775000+00:00  CREATE_COMPLETE     AWS::EC2::VPCGatewayAttachment       VPCGatewayAttachment
+2020-06-09 17:40:13.614000+00:00  CREATE_COMPLETE     AWS::EC2::VPCEndpoint                S3VPCEndpoint
+2020-06-09 17:40:13.262000+00:00  CREATE_IN_PROGRESS  AWS::EC2::VPCEndpoint                S3VPCEndpoint                                                                                        Resource creation Initiated
+2020-06-09 17:40:12.666000+00:00  CREATE_IN_PROGRESS  AWS::EC2::VPCEndpoint                S3VPCEndpoint
+2020-06-09 17:40:07.779000+00:00  CREATE_COMPLETE     AWS::EC2::RouteTable                 PrivateSubnet2ARouteTable
+2020-06-09 17:40:06.826000+00:00  CREATE_COMPLETE     AWS::EC2::RouteTable                 PrivateSubnet1ARouteTable
+2020-06-09 17:40:06.650000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                 PrivateSubnet2ARouteTable                                                                            Resource creation Initiated
+2020-06-09 17:40:06.363000+00:00  CREATE_COMPLETE     AWS::EC2::RouteTable                 PublicSubnetRouteTable
+2020-06-09 17:40:06.244000+00:00  CREATE_COMPLETE     AWS::EC2::RouteTable                 PrivateSubnet3ARouteTable
+2020-06-09 17:40:06.074000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                 PrivateSubnet2ARouteTable
+2020-06-09 17:40:05.979000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                     PrivateSubnet1A                                                                                      Resource creation Initiated
+2020-06-09 17:40:05.620000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                     PrivateSubnet2A                                                                                      Resource creation Initiated
+2020-06-09 17:40:05.551000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                     PrivateSubnet3A                                                                                      Resource creation Initiated
+2020-06-09 17:40:05.411000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                     PrivateSubnet1A
+2020-06-09 17:40:05.252000+00:00  CREATE_COMPLETE     AWS::EC2::VPCDHCPOptionsAssociation  VPCDHCPOptionsAssociation
+2020-06-09 17:40:05.187000+00:00  CREATE_IN_PROGRESS  AWS::EC2::VPCGatewayAttachment       VPCGatewayAttachment                                                                                 Resource creation Initiated
+2020-06-09 17:40:05.178000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                 PublicSubnetRouteTable                                                                               Resource creation Initiated
+2020-06-09 17:40:05.149000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                     PublicSubnet1                                                                                        Resource creation Initiated
+2020-06-09 17:40:05.131000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                     PrivateSubnet2A
+2020-06-09 17:40:05.110000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                 PrivateSubnet1ARouteTable                                                                            Resource creation Initiated
+2020-06-09 17:40:05.076000+00:00  CREATE_IN_PROGRESS  AWS::EC2::VPCDHCPOptionsAssociation  VPCDHCPOptionsAssociation                                                                            Resource creation Initiated
+2020-06-09 17:40:05.011000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                     PublicSubnet2                                                                                        Resource creation Initiated
+2020-06-09 17:40:04.995000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                     PrivateSubnet3A
+2020-06-09 17:40:04.804000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                     PublicSubnet3                                                                                        Resource creation Initiated
+2020-06-09 17:40:04.608000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                 PublicSubnetRouteTable
+2020-06-09 17:40:04.579000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                 PrivateSubnet1ARouteTable
+2020-06-09 17:40:04.510000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                 PrivateSubnet3ARouteTable                                                                            Resource creation Initiated
+2020-06-09 17:40:04.275000+00:00  CREATE_IN_PROGRESS  AWS::EC2::VPCDHCPOptionsAssociation  VPCDHCPOptionsAssociation
+2020-06-09 17:40:04.098000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                     PublicSubnet3
+2020-06-09 17:40:04.023000+00:00  CREATE_IN_PROGRESS  AWS::EC2::VPCGatewayAttachment       VPCGatewayAttachment
+2020-06-09 17:40:04.007000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                     PublicSubnet2
+2020-06-09 17:40:03.899000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                     PublicSubnet1
+2020-06-09 17:40:03.549000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                 PrivateSubnet3ARouteTable
+2020-06-09 17:39:57.981000+00:00  CREATE_COMPLETE     AWS::EC2::VPC                        VPC
+2020-06-09 17:39:56.686000+00:00  CREATE_COMPLETE     AWS::EC2::DHCPOptions                DHCPOptions
+2020-06-09 17:39:56.082000+00:00  CREATE_COMPLETE     AWS::EC2::InternetGateway            InternetGateway
+2020-06-09 17:39:40.691000+00:00  CREATE_IN_PROGRESS  AWS::EC2::DHCPOptions                DHCPOptions                                                                                          Resource creation Initiated
+2020-06-09 17:39:40.361000+00:00  CREATE_IN_PROGRESS  AWS::EC2::DHCPOptions                DHCPOptions
+2020-06-09 17:39:40.023000+00:00  CREATE_IN_PROGRESS  AWS::EC2::VPC                        VPC                                                                                                  Resource creation Initiated
+2020-06-09 17:39:39.720000+00:00  CREATE_IN_PROGRESS  AWS::EC2::InternetGateway            InternetGateway                                                                                      Resource creation Initiated
+2020-06-09 17:39:39.450000+00:00  CREATE_IN_PROGRESS  AWS::EC2::VPC                        VPC
+2020-06-09 17:39:39.077000+00:00  CREATE_IN_PROGRESS  AWS::EC2::InternetGateway            InternetGateway
+2020-06-09 17:39:28.905000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack           tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-013d8aab70-VPCStack-ON1UR1HAMGME  User Initiated
+*****************************************************************************
+-----------------------------------------------------------------------------
+Tested on: Tuesday, 09. June 2020 05:41PM
+-----------------------------------------------------------------------------
+

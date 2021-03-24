@@ -1,0 +1,34 @@
+general:
+  parameters:
+    KeyPairName: armtest 
+project:
+  name: quickstart-qingcloud-kubesphere
+  owner: quickstart-eng@amazon.com
+#  lambda_source_path: functions/source
+  lambda_zip_path: functions/packages
+  regions:
+  - us-east-2
+  - us-east-1
+  - eu-west-1
+  - us-west-2
+  template: templates/kubesphere-master.template.yaml
+  parameters:
+#   KeyPairName: armtest
+    RemoteAccessCIDR: 10.0.0.0/16
+    QSS3BucketName: qs-testing-ameighta
+#    QSS3BucketRegion: $[taskcat_current_region]
+#    NodeInstanceType: t3.xlarge
+#    Openpitrix: false
+#    Devops: false
+#    Servicemesh: false
+#    Notification: false
+    #KubeSphereLicenseKey: OVERRIDE
+tests:
+  defaults:
+    template: templates/kubesphere-master.template.yaml
+    parameters:
+      AvailabilityZones: $[taskcat_genaz_3]
+    regions:
+    - us-east-1
+#    - us-east-2
+#    - us-west-2

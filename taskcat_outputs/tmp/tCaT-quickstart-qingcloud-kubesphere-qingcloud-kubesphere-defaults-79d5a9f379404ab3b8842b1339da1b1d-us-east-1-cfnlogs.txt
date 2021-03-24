@@ -1,0 +1,375 @@
+-----------------------------------------------------------------------------
+Region: us-east-1
+StackName: tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a9f379404ab3b8842b1339da1b1d
+*****************************************************************************
+ResourceStatusReason:  
+The following resource(s) failed to create: [EKSStack].
+*****************************************************************************
+*****************************************************************************
+Events:  
+TimeStamp                         ResourceStatus      ResourceType                LogicalResourceId                                                                                    ResourceStatusReason
+--------------------------------  ------------------  --------------------------  ---------------------------------------------------------------------------------------------------  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2020-06-10 02:09:55.631000+00:00  CREATE_FAILED       AWS::CloudFormation::Stack  tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a9f379404ab3b8842b1339da1b1d  The following resource(s) failed to create: [EKSStack].
+2020-06-10 02:09:54.479000+00:00  CREATE_FAILED       AWS::CloudFormation::Stack  EKSStack                                                                                             Embedded stack arn:aws:cloudformation:us-east-1:584003659997:stack/tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a9f379-EKSStack-1NGPSU9E2OZT4/d35d80d0-aabe-11ea-83cb-0a39c55408a9 was not successfully created: The following resource(s) failed to create: [FunctionStack].
+2020-06-10 02:05:15.826000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack  EKSStack                                                                                             Resource creation Initiated
+2020-06-10 02:05:14.923000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack  EKSStack
+2020-06-10 02:05:10.455000+00:00  CREATE_COMPLETE     AWS::CloudFormation::Stack  VPCStack
+2020-06-10 02:01:36.993000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack  VPCStack                                                                                             Resource creation Initiated
+2020-06-10 02:01:35.835000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack  VPCStack
+2020-06-10 02:01:28.152000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack  tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a9f379404ab3b8842b1339da1b1d  User Initiated
+*****************************************************************************
+-----------------------------------------------------------------------------
+Tested on: Wednesday, 10. June 2020 02:10AM
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+Region: us-east-1
+StackName: tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a9f379-VPCStack-1EA9HTBEQBS59
+*****************************************************************************
+ResourceStatusReason:  
+Stack launch was successful
+*****************************************************************************
+*****************************************************************************
+Events:  
+TimeStamp                         ResourceStatus      ResourceType                           LogicalResourceId                                                                                     ResourceStatusReason
+--------------------------------  ------------------  -------------------------------------  ----------------------------------------------------------------------------------------------------  ---------------------------
+2020-06-10 02:05:09.169000+00:00  CREATE_COMPLETE     AWS::CloudFormation::Stack             tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a9f379-VPCStack-1EA9HTBEQBS59
+2020-06-10 02:05:00.268000+00:00  CREATE_COMPLETE     AWS::EC2::Route                        PrivateSubnet2ARoute
+2020-06-10 02:04:48.274000+00:00  CREATE_COMPLETE     AWS::EC2::Route                        PrivateSubnet1ARoute
+2020-06-10 02:04:46.434000+00:00  CREATE_COMPLETE     AWS::EC2::Route                        PrivateSubnet3ARoute
+2020-06-10 02:04:44.853000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Route                        PrivateSubnet2ARoute                                                                                  Resource creation Initiated
+2020-06-10 02:04:44.114000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Route                        PrivateSubnet2ARoute
+2020-06-10 02:04:39.172000+00:00  CREATE_COMPLETE     AWS::EC2::NatGateway                   NATGateway2
+2020-06-10 02:04:32.781000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Route                        PrivateSubnet1ARoute                                                                                  Resource creation Initiated
+2020-06-10 02:04:32.026000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Route                        PrivateSubnet1ARoute
+2020-06-10 02:04:30.881000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Route                        PrivateSubnet3ARoute                                                                                  Resource creation Initiated
+2020-06-10 02:04:30.040000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Route                        PrivateSubnet3ARoute
+2020-06-10 02:04:27.070000+00:00  CREATE_COMPLETE     AWS::EC2::NatGateway                   NATGateway1
+2020-06-10 02:04:25.735000+00:00  CREATE_COMPLETE     AWS::EC2::NatGateway                   NATGateway3
+2020-06-10 02:02:53.818000+00:00  CREATE_IN_PROGRESS  AWS::EC2::NatGateway                   NATGateway1                                                                                           Resource creation Initiated
+2020-06-10 02:02:53.078000+00:00  CREATE_IN_PROGRESS  AWS::EC2::NatGateway                   NATGateway1
+2020-06-10 02:02:52.571000+00:00  CREATE_IN_PROGRESS  AWS::EC2::NatGateway                   NATGateway3                                                                                           Resource creation Initiated
+2020-06-10 02:02:51.964000+00:00  CREATE_IN_PROGRESS  AWS::EC2::NatGateway                   NATGateway3
+2020-06-10 02:02:50.423000+00:00  CREATE_IN_PROGRESS  AWS::EC2::NatGateway                   NATGateway2                                                                                           Resource creation Initiated
+2020-06-10 02:02:49.821000+00:00  CREATE_IN_PROGRESS  AWS::EC2::NatGateway                   NATGateway2
+2020-06-10 02:02:48.864000+00:00  CREATE_COMPLETE     AWS::EC2::SubnetRouteTableAssociation  PublicSubnet1RouteTableAssociation
+2020-06-10 02:02:47.666000+00:00  CREATE_COMPLETE     AWS::EC2::SubnetRouteTableAssociation  PrivateSubnet3ARouteTableAssociation
+2020-06-10 02:02:47.433000+00:00  CREATE_COMPLETE     AWS::EC2::SubnetRouteTableAssociation  PrivateSubnet1ARouteTableAssociation
+2020-06-10 02:02:47.216000+00:00  CREATE_COMPLETE     AWS::EC2::SubnetRouteTableAssociation  PublicSubnet2RouteTableAssociation
+2020-06-10 02:02:46.752000+00:00  CREATE_COMPLETE     AWS::EC2::EIP                          NAT3EIP
+2020-06-10 02:02:46.742000+00:00  CREATE_COMPLETE     AWS::EC2::EIP                          NAT1EIP
+2020-06-10 02:02:46.315000+00:00  CREATE_COMPLETE     AWS::EC2::SubnetRouteTableAssociation  PrivateSubnet2ARouteTableAssociation
+2020-06-10 02:02:46.188000+00:00  CREATE_COMPLETE     AWS::EC2::Route                        PublicSubnetRoute
+2020-06-10 02:02:45.916000+00:00  CREATE_COMPLETE     AWS::EC2::EIP                          NAT2EIP
+2020-06-10 02:02:45.180000+00:00  CREATE_COMPLETE     AWS::EC2::SubnetRouteTableAssociation  PublicSubnet3RouteTableAssociation
+2020-06-10 02:02:33.459000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  PublicSubnet1RouteTableAssociation                                                                    Resource creation Initiated
+2020-06-10 02:02:32.514000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  PublicSubnet1RouteTableAssociation
+2020-06-10 02:02:32.173000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  PrivateSubnet3ARouteTableAssociation                                                                  Resource creation Initiated
+2020-06-10 02:02:31.775000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  PrivateSubnet1ARouteTableAssociation                                                                  Resource creation Initiated
+2020-06-10 02:02:31.682000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  PublicSubnet2RouteTableAssociation                                                                    Resource creation Initiated
+2020-06-10 02:02:31.207000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  PrivateSubnet3ARouteTableAssociation
+2020-06-10 02:02:30.883000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  PrivateSubnet1ARouteTableAssociation
+2020-06-10 02:02:30.797000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  PrivateSubnet2ARouteTableAssociation                                                                  Resource creation Initiated
+2020-06-10 02:02:30.763000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Route                        PublicSubnetRoute                                                                                     Resource creation Initiated
+2020-06-10 02:02:30.573000+00:00  CREATE_IN_PROGRESS  AWS::EC2::EIP                          NAT1EIP                                                                                               Resource creation Initiated
+2020-06-10 02:02:30.544000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  PublicSubnet2RouteTableAssociation
+2020-06-10 02:02:30.387000+00:00  CREATE_IN_PROGRESS  AWS::EC2::EIP                          NAT3EIP                                                                                               Resource creation Initiated
+2020-06-10 02:02:30.073000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Route                        PublicSubnetRoute
+2020-06-10 02:02:30.054000+00:00  CREATE_IN_PROGRESS  AWS::EC2::EIP                          NAT1EIP
+2020-06-10 02:02:29.968000+00:00  CREATE_IN_PROGRESS  AWS::EC2::EIP                          NAT3EIP
+2020-06-10 02:02:29.752000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  PublicSubnet3RouteTableAssociation                                                                    Resource creation Initiated
+2020-06-10 02:02:29.713000+00:00  CREATE_IN_PROGRESS  AWS::EC2::EIP                          NAT2EIP                                                                                               Resource creation Initiated
+2020-06-10 02:02:29.596000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  PrivateSubnet2ARouteTableAssociation
+2020-06-10 02:02:29.339000+00:00  CREATE_IN_PROGRESS  AWS::EC2::EIP                          NAT2EIP
+2020-06-10 02:02:28.661000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  PublicSubnet3RouteTableAssociation
+2020-06-10 02:02:27.516000+00:00  CREATE_COMPLETE     AWS::EC2::Subnet                       PublicSubnet1
+2020-06-10 02:02:26.076000+00:00  CREATE_COMPLETE     AWS::EC2::Subnet                       PrivateSubnet3A
+2020-06-10 02:02:25.958000+00:00  CREATE_COMPLETE     AWS::EC2::Subnet                       PrivateSubnet1A
+2020-06-10 02:02:25.016000+00:00  CREATE_COMPLETE     AWS::EC2::Subnet                       PublicSubnet2
+2020-06-10 02:02:24.805000+00:00  CREATE_COMPLETE     AWS::EC2::VPCGatewayAttachment         VPCGatewayAttachment
+2020-06-10 02:02:24.709000+00:00  CREATE_COMPLETE     AWS::EC2::Subnet                       PrivateSubnet2A
+2020-06-10 02:02:24.276000+00:00  CREATE_COMPLETE     AWS::EC2::Subnet                       PublicSubnet3
+2020-06-10 02:02:16.331000+00:00  CREATE_COMPLETE     AWS::EC2::VPCEndpoint                  S3VPCEndpoint
+2020-06-10 02:02:16.001000+00:00  CREATE_IN_PROGRESS  AWS::EC2::VPCEndpoint                  S3VPCEndpoint                                                                                         Resource creation Initiated
+2020-06-10 02:02:15.212000+00:00  CREATE_IN_PROGRESS  AWS::EC2::VPCEndpoint                  S3VPCEndpoint
+2020-06-10 02:02:11.250000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       PublicSubnet1                                                                                         Resource creation Initiated
+2020-06-10 02:02:10.749000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       PublicSubnet1
+2020-06-10 02:02:10.532000+00:00  CREATE_COMPLETE     AWS::EC2::RouteTable                   PrivateSubnet3ARouteTable
+2020-06-10 02:02:10.062000+00:00  CREATE_COMPLETE     AWS::EC2::RouteTable                   PrivateSubnet2ARouteTable
+2020-06-10 02:02:10.061000+00:00  CREATE_COMPLETE     AWS::EC2::RouteTable                   PrivateSubnet1ARouteTable
+2020-06-10 02:02:09.967000+00:00  CREATE_COMPLETE     AWS::EC2::RouteTable                   PublicSubnetRouteTable
+2020-06-10 02:02:09.723000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       PrivateSubnet1A                                                                                       Resource creation Initiated
+2020-06-10 02:02:09.602000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       PrivateSubnet3A                                                                                       Resource creation Initiated
+2020-06-10 02:02:09.399000+00:00  CREATE_IN_PROGRESS  AWS::EC2::VPCGatewayAttachment         VPCGatewayAttachment                                                                                  Resource creation Initiated
+2020-06-10 02:02:09.369000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                   PrivateSubnet3ARouteTable                                                                             Resource creation Initiated
+2020-06-10 02:02:09.266000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       PrivateSubnet1A
+2020-06-10 02:02:09.098000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       PrivateSubnet3A
+2020-06-10 02:02:09.021000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                   PrivateSubnet1ARouteTable                                                                             Resource creation Initiated
+2020-06-10 02:02:08.970000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                   PrivateSubnet3ARouteTable
+2020-06-10 02:02:08.773000+00:00  CREATE_IN_PROGRESS  AWS::EC2::VPCGatewayAttachment         VPCGatewayAttachment
+2020-06-10 02:02:08.765000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                   PrivateSubnet2ARouteTable                                                                             Resource creation Initiated
+2020-06-10 02:02:08.754000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                   PublicSubnetRouteTable                                                                                Resource creation Initiated
+2020-06-10 02:02:08.727000+00:00  CREATE_COMPLETE     AWS::EC2::VPCDHCPOptionsAssociation    VPCDHCPOptionsAssociation
+2020-06-10 02:02:08.582000+00:00  CREATE_IN_PROGRESS  AWS::EC2::VPCDHCPOptionsAssociation    VPCDHCPOptionsAssociation                                                                             Resource creation Initiated
+2020-06-10 02:02:08.509000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                   PrivateSubnet1ARouteTable
+2020-06-10 02:02:08.487000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       PublicSubnet2                                                                                         Resource creation Initiated
+2020-06-10 02:02:08.400000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                   PrivateSubnet2ARouteTable
+2020-06-10 02:02:08.140000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       PrivateSubnet2A                                                                                       Resource creation Initiated
+2020-06-10 02:02:08.107000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                   PublicSubnetRouteTable
+2020-06-10 02:02:08.065000+00:00  CREATE_IN_PROGRESS  AWS::EC2::VPCDHCPOptionsAssociation    VPCDHCPOptionsAssociation
+2020-06-10 02:02:08.032000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       PublicSubnet2
+2020-06-10 02:02:07.854000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       PublicSubnet3                                                                                         Resource creation Initiated
+2020-06-10 02:02:07.457000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       PrivateSubnet2A
+2020-06-10 02:02:07.388000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       PublicSubnet3
+2020-06-10 02:02:03.285000+00:00  CREATE_COMPLETE     AWS::EC2::VPC                          VPC
+2020-06-10 02:02:03.150000+00:00  CREATE_COMPLETE     AWS::EC2::InternetGateway              InternetGateway
+2020-06-10 02:02:01.839000+00:00  CREATE_COMPLETE     AWS::EC2::DHCPOptions                  DHCPOptions
+2020-06-10 02:01:46.705000+00:00  CREATE_IN_PROGRESS  AWS::EC2::InternetGateway              InternetGateway                                                                                       Resource creation Initiated
+2020-06-10 02:01:46.351000+00:00  CREATE_IN_PROGRESS  AWS::EC2::InternetGateway              InternetGateway
+2020-06-10 02:01:46.139000+00:00  CREATE_IN_PROGRESS  AWS::EC2::VPC                          VPC                                                                                                   Resource creation Initiated
+2020-06-10 02:01:45.777000+00:00  CREATE_IN_PROGRESS  AWS::EC2::DHCPOptions                  DHCPOptions                                                                                           Resource creation Initiated
+2020-06-10 02:01:45.601000+00:00  CREATE_IN_PROGRESS  AWS::EC2::VPC                          VPC
+2020-06-10 02:01:45.443000+00:00  CREATE_IN_PROGRESS  AWS::EC2::DHCPOptions                  DHCPOptions
+2020-06-10 02:01:36.767000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack             tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a9f379-VPCStack-1EA9HTBEQBS59  User Initiated
+*****************************************************************************
+-----------------------------------------------------------------------------
+Tested on: Wednesday, 10. June 2020 02:10AM
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+Region: us-east-1
+StackName: tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a9f379-EKSStack-1NGPSU9E2OZT4
+*****************************************************************************
+ResourceStatusReason:  
+The following resource(s) failed to create: [FunctionStack].
+*****************************************************************************
+*****************************************************************************
+Events:  
+TimeStamp                         ResourceStatus      ResourceType                    LogicalResourceId                                                                                     ResourceStatusReason
+--------------------------------  ------------------  ------------------------------  ----------------------------------------------------------------------------------------------------  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2020-06-10 02:09:37.112000+00:00  CREATE_FAILED       AWS::CloudFormation::Stack      tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a9f379-EKSStack-1NGPSU9E2OZT4  The following resource(s) failed to create: [FunctionStack].
+2020-06-10 02:09:36.033000+00:00  CREATE_FAILED       AWS::CloudFormation::Stack      FunctionStack                                                                                         Embedded stack arn:aws:cloudformation:us-east-1:584003659997:stack/tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a-FunctionStack-1RO3L2LGT77R3/49a1d700-aabf-11ea-91bd-0e3b177c99d5 was not successfully created: The following resource(s) failed to create: [CopyZips].
+2020-06-10 02:08:34.170000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack      FunctionStack                                                                                         Resource creation Initiated
+2020-06-10 02:08:33.376000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack      FunctionStack
+2020-06-10 02:08:29.143000+00:00  CREATE_COMPLETE     AWS::CloudFormation::Stack      IamStack
+2020-06-10 02:05:50.042000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack      IamStack                                                                                              Resource creation Initiated
+2020-06-10 02:05:49.002000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack      IamStack
+2020-06-10 02:05:44.054000+00:00  CREATE_COMPLETE     AWS::S3::Bucket                 LambdaZipsBucket
+2020-06-10 02:05:34.594000+00:00  CREATE_COMPLETE     AWS::EC2::SecurityGroupIngress  ControlPlaneSecurityGroupIngress
+2020-06-10 02:05:33.785000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SecurityGroupIngress  ControlPlaneSecurityGroupIngress                                                                      Resource creation Initiated
+2020-06-10 02:05:33.576000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SecurityGroupIngress  ControlPlaneSecurityGroupIngress
+2020-06-10 02:05:29.720000+00:00  CREATE_COMPLETE     AWS::EC2::SecurityGroup         ControlPlaneSecurityGroup
+2020-06-10 02:05:28.803000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SecurityGroup         ControlPlaneSecurityGroup                                                                             Resource creation Initiated
+2020-06-10 02:05:24.075000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SecurityGroup         ControlPlaneSecurityGroup
+2020-06-10 02:05:22.974000+00:00  CREATE_IN_PROGRESS  AWS::S3::Bucket                 LambdaZipsBucket                                                                                      Resource creation Initiated
+2020-06-10 02:05:22.076000+00:00  CREATE_IN_PROGRESS  AWS::S3::Bucket                 LambdaZipsBucket
+2020-06-10 02:05:15.666000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack      tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a9f379-EKSStack-1NGPSU9E2OZT4  User Initiated
+*****************************************************************************
+-----------------------------------------------------------------------------
+Tested on: Wednesday, 10. June 2020 02:10AM
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+Region: us-east-1
+StackName: tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a9f379-IamStack-ZAOYOY9WVIQ5
+*****************************************************************************
+ResourceStatusReason:  
+Stack launch was successful
+*****************************************************************************
+*****************************************************************************
+Events:  
+TimeStamp                         ResourceStatus      ResourceType                LogicalResourceId                                                                                    ResourceStatusReason
+--------------------------------  ------------------  --------------------------  ---------------------------------------------------------------------------------------------------  ---------------------------
+2020-06-10 02:08:17.492000+00:00  CREATE_COMPLETE     AWS::CloudFormation::Stack  tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a9f379-IamStack-ZAOYOY9WVIQ5
+2020-06-10 02:08:14.167000+00:00  CREATE_COMPLETE     AWS::IAM::InstanceProfile   NodeInstanceProfile
+2020-06-10 02:06:13.562000+00:00  CREATE_IN_PROGRESS  AWS::IAM::InstanceProfile   NodeInstanceProfile                                                                                  Resource creation Initiated
+2020-06-10 02:06:13.174000+00:00  CREATE_IN_PROGRESS  AWS::IAM::InstanceProfile   NodeInstanceProfile
+2020-06-10 02:06:10.753000+00:00  CREATE_COMPLETE     AWS::IAM::Role              LogDeliveryRole
+2020-06-10 02:06:10.725000+00:00  CREATE_COMPLETE     AWS::IAM::Role              DeleteBucketContentsRole
+2020-06-10 02:06:10.585000+00:00  CREATE_COMPLETE     AWS::IAM::Role              CreateVpcRoleRole
+2020-06-10 02:06:10.529000+00:00  CREATE_COMPLETE     AWS::IAM::Role              BastionRole
+2020-06-10 02:06:10.355000+00:00  CREATE_COMPLETE     AWS::IAM::Role              KubernetesAdminRole
+2020-06-10 02:06:10.240000+00:00  CREATE_COMPLETE     AWS::IAM::Role              NodeSGRole
+2020-06-10 02:06:10.206000+00:00  CREATE_COMPLETE     AWS::IAM::Role              FargateProfileRole
+2020-06-10 02:06:10.155000+00:00  CREATE_COMPLETE     AWS::IAM::Role              CopyZipsRole
+2020-06-10 02:06:10.086000+00:00  CREATE_COMPLETE     AWS::IAM::Role              CleanupSecurityGroupDependenciesRole
+2020-06-10 02:06:10.085000+00:00  CREATE_COMPLETE     AWS::IAM::Role              NodeInstanceRole
+2020-06-10 02:06:10.072000+00:00  CREATE_COMPLETE     AWS::IAM::Role              HelmExecutionRole
+2020-06-10 02:06:10.067000+00:00  CREATE_COMPLETE     AWS::IAM::Role              RegisterTypeRole
+2020-06-10 02:06:10.003000+00:00  CREATE_COMPLETE     AWS::IAM::Role              ExecutionRole
+2020-06-10 02:06:09.901000+00:00  CREATE_COMPLETE     AWS::IAM::Role              CleanupLoadBalancersRole
+2020-06-10 02:06:09.626000+00:00  CREATE_COMPLETE     AWS::IAM::Role              GetCallerArnRole
+2020-06-10 02:06:09.496000+00:00  CREATE_COMPLETE     AWS::IAM::Role              ControlPlaneRole
+2020-06-10 02:06:09.027000+00:00  CREATE_COMPLETE     AWS::IAM::Role              FargateExecutionRole
+2020-06-10 02:05:56.303000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              LogDeliveryRole                                                                                      Resource creation Initiated
+2020-06-10 02:05:56.207000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              CreateVpcRoleRole                                                                                    Resource creation Initiated
+2020-06-10 02:05:56.009000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              DeleteBucketContentsRole                                                                             Resource creation Initiated
+2020-06-10 02:05:55.951000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              LogDeliveryRole
+2020-06-10 02:05:55.925000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              CleanupSecurityGroupDependenciesRole                                                                 Resource creation Initiated
+2020-06-10 02:05:55.909000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              ControlPlaneRole                                                                                     Resource creation Initiated
+2020-06-10 02:05:55.869000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              KubernetesAdminRole                                                                                  Resource creation Initiated
+2020-06-10 02:05:55.849000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              CreateVpcRoleRole
+2020-06-10 02:05:55.836000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              HelmExecutionRole                                                                                    Resource creation Initiated
+2020-06-10 02:05:55.823000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              ExecutionRole                                                                                        Resource creation Initiated
+2020-06-10 02:05:55.730000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              BastionRole                                                                                          Resource creation Initiated
+2020-06-10 02:05:55.673000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              CleanupLoadBalancersRole                                                                             Resource creation Initiated
+2020-06-10 02:05:55.615000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              NodeInstanceRole                                                                                     Resource creation Initiated
+2020-06-10 02:05:55.613000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              CopyZipsRole                                                                                         Resource creation Initiated
+2020-06-10 02:05:55.606000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              NodeSGRole                                                                                           Resource creation Initiated
+2020-06-10 02:05:55.601000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              FargateExecutionRole                                                                                 Resource creation Initiated
+2020-06-10 02:05:55.577000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              GetCallerArnRole                                                                                     Resource creation Initiated
+2020-06-10 02:05:55.565000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              FargateProfileRole                                                                                   Resource creation Initiated
+2020-06-10 02:05:55.525000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              DeleteBucketContentsRole
+2020-06-10 02:05:55.494000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              ExecutionRole
+2020-06-10 02:05:55.490000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              ControlPlaneRole
+2020-06-10 02:05:55.456000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              CleanupSecurityGroupDependenciesRole
+2020-06-10 02:05:55.435000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              RegisterTypeRole                                                                                     Resource creation Initiated
+2020-06-10 02:05:55.310000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              HelmExecutionRole
+2020-06-10 02:05:55.306000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              KubernetesAdminRole
+2020-06-10 02:05:55.298000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              BastionRole
+2020-06-10 02:05:55.283000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              NodeInstanceRole
+2020-06-10 02:05:55.260000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              NodeSGRole
+2020-06-10 02:05:55.248000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              CleanupLoadBalancersRole
+2020-06-10 02:05:55.241000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              CopyZipsRole
+2020-06-10 02:05:55.223000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              GetCallerArnRole
+2020-06-10 02:05:55.186000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              FargateExecutionRole
+2020-06-10 02:05:55.177000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              FargateProfileRole
+2020-06-10 02:05:55.071000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              RegisterTypeRole
+2020-06-10 02:05:49.800000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack  tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a9f379-IamStack-ZAOYOY9WVIQ5  User Initiated
+*****************************************************************************
+-----------------------------------------------------------------------------
+Tested on: Wednesday, 10. June 2020 02:10AM
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+Region: us-east-1
+StackName: tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a-FunctionStack-1RO3L2LGT77R3
+*****************************************************************************
+ResourceStatusReason:  
+The following resource(s) failed to create: [CopyZips].
+*****************************************************************************
+*****************************************************************************
+Events:  
+TimeStamp                         ResourceStatus      ResourceType                LogicalResourceId                                                                                     ResourceStatusReason
+--------------------------------  ------------------  --------------------------  ----------------------------------------------------------------------------------------------------  -------------------------------------------------------------------------------------------------------------------------
+2020-06-10 02:09:22.645000+00:00  CREATE_FAILED       AWS::CloudFormation::Stack  tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a-FunctionStack-1RO3L2LGT77R3  The following resource(s) failed to create: [CopyZips].
+2020-06-10 02:09:20.424000+00:00  CREATE_FAILED       Custom::CopyZips            CopyZips                                                                                              Failed to create resource. See the details in CloudWatch Log Stream: 2020/06/10/[$LATEST]dce4de20ccd84d8c91ce308403a7e63c
+2020-06-10 02:09:20.263000+00:00  CREATE_IN_PROGRESS  Custom::CopyZips            CopyZips                                                                                              Resource creation Initiated
+2020-06-10 02:09:17.666000+00:00  CREATE_COMPLETE     AWS::EC2::SecurityGroup     EKSLambdaSecurityGroup
+2020-06-10 02:09:16.592000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SecurityGroup     EKSLambdaSecurityGroup                                                                                Resource creation Initiated
+2020-06-10 02:09:16.175000+00:00  CREATE_IN_PROGRESS  Custom::CopyZips            CopyZips
+2020-06-10 02:09:13.035000+00:00  CREATE_COMPLETE     AWS::S3::BucketPolicy       ArtifactCopyPolicy
+2020-06-10 02:09:12.734000+00:00  CREATE_IN_PROGRESS  AWS::S3::BucketPolicy       ArtifactCopyPolicy                                                                                    Resource creation Initiated
+2020-06-10 02:09:12.127000+00:00  CREATE_COMPLETE     AWS::Lambda::Function       CopyZipsFunction
+2020-06-10 02:09:11.759000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SecurityGroup     EKSLambdaSecurityGroup
+2020-06-10 02:09:11.414000+00:00  CREATE_IN_PROGRESS  AWS::Lambda::Function       CopyZipsFunction                                                                                      Resource creation Initiated
+2020-06-10 02:09:11.198000+00:00  CREATE_IN_PROGRESS  AWS::S3::BucketPolicy       ArtifactCopyPolicy
+2020-06-10 02:09:10.981000+00:00  CREATE_IN_PROGRESS  AWS::Lambda::Function       CopyZipsFunction
+2020-06-10 02:08:34.059000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack  tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a-FunctionStack-1RO3L2LGT77R3  User Initiated
+*****************************************************************************
+-----------------------------------------------------------------------------
+Tested on: Wednesday, 10. June 2020 02:10AM
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+Region: us-east-1
+StackName: tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a9f379-IamStack-ZAOYOY9WVIQ5
+*****************************************************************************
+ResourceStatusReason:  
+Stack launch was successful
+*****************************************************************************
+*****************************************************************************
+Events:  
+TimeStamp                         ResourceStatus      ResourceType                LogicalResourceId                                                                                    ResourceStatusReason
+--------------------------------  ------------------  --------------------------  ---------------------------------------------------------------------------------------------------  ---------------------------
+2020-06-10 02:08:17.492000+00:00  CREATE_COMPLETE     AWS::CloudFormation::Stack  tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a9f379-IamStack-ZAOYOY9WVIQ5
+2020-06-10 02:08:14.167000+00:00  CREATE_COMPLETE     AWS::IAM::InstanceProfile   NodeInstanceProfile
+2020-06-10 02:06:13.562000+00:00  CREATE_IN_PROGRESS  AWS::IAM::InstanceProfile   NodeInstanceProfile                                                                                  Resource creation Initiated
+2020-06-10 02:06:13.174000+00:00  CREATE_IN_PROGRESS  AWS::IAM::InstanceProfile   NodeInstanceProfile
+2020-06-10 02:06:10.753000+00:00  CREATE_COMPLETE     AWS::IAM::Role              LogDeliveryRole
+2020-06-10 02:06:10.725000+00:00  CREATE_COMPLETE     AWS::IAM::Role              DeleteBucketContentsRole
+2020-06-10 02:06:10.585000+00:00  CREATE_COMPLETE     AWS::IAM::Role              CreateVpcRoleRole
+2020-06-10 02:06:10.529000+00:00  CREATE_COMPLETE     AWS::IAM::Role              BastionRole
+2020-06-10 02:06:10.355000+00:00  CREATE_COMPLETE     AWS::IAM::Role              KubernetesAdminRole
+2020-06-10 02:06:10.240000+00:00  CREATE_COMPLETE     AWS::IAM::Role              NodeSGRole
+2020-06-10 02:06:10.206000+00:00  CREATE_COMPLETE     AWS::IAM::Role              FargateProfileRole
+2020-06-10 02:06:10.155000+00:00  CREATE_COMPLETE     AWS::IAM::Role              CopyZipsRole
+2020-06-10 02:06:10.086000+00:00  CREATE_COMPLETE     AWS::IAM::Role              CleanupSecurityGroupDependenciesRole
+2020-06-10 02:06:10.085000+00:00  CREATE_COMPLETE     AWS::IAM::Role              NodeInstanceRole
+2020-06-10 02:06:10.072000+00:00  CREATE_COMPLETE     AWS::IAM::Role              HelmExecutionRole
+2020-06-10 02:06:10.067000+00:00  CREATE_COMPLETE     AWS::IAM::Role              RegisterTypeRole
+2020-06-10 02:06:10.003000+00:00  CREATE_COMPLETE     AWS::IAM::Role              ExecutionRole
+2020-06-10 02:06:09.901000+00:00  CREATE_COMPLETE     AWS::IAM::Role              CleanupLoadBalancersRole
+2020-06-10 02:06:09.626000+00:00  CREATE_COMPLETE     AWS::IAM::Role              GetCallerArnRole
+2020-06-10 02:06:09.496000+00:00  CREATE_COMPLETE     AWS::IAM::Role              ControlPlaneRole
+2020-06-10 02:06:09.027000+00:00  CREATE_COMPLETE     AWS::IAM::Role              FargateExecutionRole
+2020-06-10 02:05:56.303000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              LogDeliveryRole                                                                                      Resource creation Initiated
+2020-06-10 02:05:56.207000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              CreateVpcRoleRole                                                                                    Resource creation Initiated
+2020-06-10 02:05:56.009000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              DeleteBucketContentsRole                                                                             Resource creation Initiated
+2020-06-10 02:05:55.951000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              LogDeliveryRole
+2020-06-10 02:05:55.925000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              CleanupSecurityGroupDependenciesRole                                                                 Resource creation Initiated
+2020-06-10 02:05:55.909000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              ControlPlaneRole                                                                                     Resource creation Initiated
+2020-06-10 02:05:55.869000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              KubernetesAdminRole                                                                                  Resource creation Initiated
+2020-06-10 02:05:55.849000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              CreateVpcRoleRole
+2020-06-10 02:05:55.836000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              HelmExecutionRole                                                                                    Resource creation Initiated
+2020-06-10 02:05:55.823000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              ExecutionRole                                                                                        Resource creation Initiated
+2020-06-10 02:05:55.730000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              BastionRole                                                                                          Resource creation Initiated
+2020-06-10 02:05:55.673000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              CleanupLoadBalancersRole                                                                             Resource creation Initiated
+2020-06-10 02:05:55.615000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              NodeInstanceRole                                                                                     Resource creation Initiated
+2020-06-10 02:05:55.613000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              CopyZipsRole                                                                                         Resource creation Initiated
+2020-06-10 02:05:55.606000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              NodeSGRole                                                                                           Resource creation Initiated
+2020-06-10 02:05:55.601000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              FargateExecutionRole                                                                                 Resource creation Initiated
+2020-06-10 02:05:55.577000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              GetCallerArnRole                                                                                     Resource creation Initiated
+2020-06-10 02:05:55.565000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              FargateProfileRole                                                                                   Resource creation Initiated
+2020-06-10 02:05:55.525000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              DeleteBucketContentsRole
+2020-06-10 02:05:55.494000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              ExecutionRole
+2020-06-10 02:05:55.490000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              ControlPlaneRole
+2020-06-10 02:05:55.456000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              CleanupSecurityGroupDependenciesRole
+2020-06-10 02:05:55.435000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              RegisterTypeRole                                                                                     Resource creation Initiated
+2020-06-10 02:05:55.310000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              HelmExecutionRole
+2020-06-10 02:05:55.306000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              KubernetesAdminRole
+2020-06-10 02:05:55.298000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              BastionRole
+2020-06-10 02:05:55.283000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              NodeInstanceRole
+2020-06-10 02:05:55.260000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              NodeSGRole
+2020-06-10 02:05:55.248000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              CleanupLoadBalancersRole
+2020-06-10 02:05:55.241000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              CopyZipsRole
+2020-06-10 02:05:55.223000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              GetCallerArnRole
+2020-06-10 02:05:55.186000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              FargateExecutionRole
+2020-06-10 02:05:55.177000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              FargateProfileRole
+2020-06-10 02:05:55.071000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role              RegisterTypeRole
+2020-06-10 02:05:49.800000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack  tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a9f379-IamStack-ZAOYOY9WVIQ5  User Initiated
+*****************************************************************************
+-----------------------------------------------------------------------------
+Tested on: Wednesday, 10. June 2020 02:10AM
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+Region: us-east-1
+StackName: tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a-FunctionStack-1RO3L2LGT77R3
+*****************************************************************************
+ResourceStatusReason:  
+The following resource(s) failed to create: [CopyZips].
+*****************************************************************************
+*****************************************************************************
+Events:  
+TimeStamp                         ResourceStatus      ResourceType                LogicalResourceId                                                                                     ResourceStatusReason
+--------------------------------  ------------------  --------------------------  ----------------------------------------------------------------------------------------------------  -------------------------------------------------------------------------------------------------------------------------
+2020-06-10 02:09:22.645000+00:00  CREATE_FAILED       AWS::CloudFormation::Stack  tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a-FunctionStack-1RO3L2LGT77R3  The following resource(s) failed to create: [CopyZips].
+2020-06-10 02:09:20.424000+00:00  CREATE_FAILED       Custom::CopyZips            CopyZips                                                                                              Failed to create resource. See the details in CloudWatch Log Stream: 2020/06/10/[$LATEST]dce4de20ccd84d8c91ce308403a7e63c
+2020-06-10 02:09:20.263000+00:00  CREATE_IN_PROGRESS  Custom::CopyZips            CopyZips                                                                                              Resource creation Initiated
+2020-06-10 02:09:17.666000+00:00  CREATE_COMPLETE     AWS::EC2::SecurityGroup     EKSLambdaSecurityGroup
+2020-06-10 02:09:16.592000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SecurityGroup     EKSLambdaSecurityGroup                                                                                Resource creation Initiated
+2020-06-10 02:09:16.175000+00:00  CREATE_IN_PROGRESS  Custom::CopyZips            CopyZips
+2020-06-10 02:09:13.035000+00:00  CREATE_COMPLETE     AWS::S3::BucketPolicy       ArtifactCopyPolicy
+2020-06-10 02:09:12.734000+00:00  CREATE_IN_PROGRESS  AWS::S3::BucketPolicy       ArtifactCopyPolicy                                                                                    Resource creation Initiated
+2020-06-10 02:09:12.127000+00:00  CREATE_COMPLETE     AWS::Lambda::Function       CopyZipsFunction
+2020-06-10 02:09:11.759000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SecurityGroup     EKSLambdaSecurityGroup
+2020-06-10 02:09:11.414000+00:00  CREATE_IN_PROGRESS  AWS::Lambda::Function       CopyZipsFunction                                                                                      Resource creation Initiated
+2020-06-10 02:09:11.198000+00:00  CREATE_IN_PROGRESS  AWS::S3::BucketPolicy       ArtifactCopyPolicy
+2020-06-10 02:09:10.981000+00:00  CREATE_IN_PROGRESS  AWS::Lambda::Function       CopyZipsFunction
+2020-06-10 02:08:34.059000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack  tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-79d5a-FunctionStack-1RO3L2LGT77R3  User Initiated
+*****************************************************************************
+-----------------------------------------------------------------------------
+Tested on: Wednesday, 10. June 2020 02:10AM
+-----------------------------------------------------------------------------
+

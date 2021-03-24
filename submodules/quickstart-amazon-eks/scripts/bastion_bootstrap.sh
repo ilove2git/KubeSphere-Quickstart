@@ -149,10 +149,12 @@ DATE_TIME_WHOAMI="`whoami`:`date "+%Y-%m-%d %H:%M:%S"`"
 LOG_ORIGINAL_COMMAND=`echo "$DATE_TIME_WHOAMI:$SSH_ORIGINAL_COMMAND"`
 echo "$LOG_ORIGINAL_COMMAND" >> "${bastion_mnt}/${bastion_log}"
 log_dir="/var/log/bastion/"
+
 else
 # The "script" program could be circumvented with some commands
 # (e.g. bash, nc). Therefore, I intentionally prevent users
 # from supplying commands.
+
 echo "This bastion supports interactive sessions only. Do not supply a command"
 exit 1
 fi
@@ -172,21 +174,22 @@ EOF
 function setup_logs () {
 
     echo "${FUNCNAME[0]} Started"
+    URL_SUFFIX="${URL_SUFFIX:-amazonaws.com}"
 
     if [[ "${release}" == "SLES" ]]; then
-        curl 'https://s3.amazonaws.com/amazoncloudwatch-agent/suse/amd64/latest/amazon-cloudwatch-agent.rpm' -O
+        curl "https://amazoncloudwatch-agent-${REGION}.s3.${REGION}.${URL_SUFFIX}/suse/amd64/latest/amazon-cloudwatch-agent.rpm" -O
         zypper install --allow-unsigned-rpm -y ./amazon-cloudwatch-agent.rpm
         rm ./amazon-cloudwatch-agent.rpm
     elif [[ "${release}" == "CentOS" ]]; then
-        curl 'https://s3.amazonaws.com/amazoncloudwatch-agent/centos/amd64/latest/amazon-cloudwatch-agent.rpm' -O
+        curl "https://amazoncloudwatch-agent-${REGION}.s3.${REGION}.${URL_SUFFIX}/centos/amd64/latest/amazon-cloudwatch-agent.rpm" -O
         rpm -U ./amazon-cloudwatch-agent.rpm
         rm ./amazon-cloudwatch-agent.rpm
     elif [[ "${release}" == "Ubuntu" ]]; then
-        curl 'https://s3.amazonaws.com/amazoncloudwatch-agent/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb' -O
+        curl "https://amazoncloudwatch-agent-${REGION}.s3.${REGION}.${URL_SUFFIX}/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb" -O
         dpkg -i -E ./amazon-cloudwatch-agent.deb
         rm ./amazon-cloudwatch-agent.deb
     elif [[ "${release}" == "AMZN" ]]; then
-        curl 'https://s3.amazonaws.com/amazoncloudwatch-agent/amazon_linux/amd64/latest/amazon-cloudwatch-agent.rpm' -O
+        curl "https://amazoncloudwatch-agent-${REGION}.s3.${REGION}.${URL_SUFFIX}/amazon_linux/amd64/latest/amazon-cloudwatch-agent.rpm" -O
         rpm -U ./amazon-cloudwatch-agent.rpm
         rm ./amazon-cloudwatch-agent.rpm
     fi
@@ -269,13 +272,20 @@ EOF
     fi
 
     if [[ "${release}" == "SLES" ]]; then
-        echo "0 0 * * * zypper patch --non-interactive" > ~/mycron
+        zypper install -y bash-completion
+        echo "0 0 * * * zypper patch -y" > ~/mycron
     elif [[ "${release}" == "Ubuntu" ]]; then
         apt-get install -y unattended-upgrades
         apt-get install -y bash-completion
         echo "0 0 * * * unattended-upgrades -d" > ~/mycron
     else
-        yum install -y bash-completion --enablerepo=epel
+        OS_VERSION=`cat /etc/os-release | grep '^VERSION=' |  tr -d \" | sed 's/\n//g' | sed 's/VERSION=//g'`
+        if [[ "${OS_VERSION}" == "2" ]]; then
+            amazon-linux-extras install epel
+            yum install -y bash-completion
+        else
+            yum install -y bash-completion --enablerepo=epel
+        fi
         echo "0 0 * * * yum -y update --security" > ~/mycron
     fi
 
@@ -421,10 +431,10 @@ EOF
 
 function install_kubernetes_client_tools() {
     mkdir -p /usr/local/bin/
-    retry_command 20 curl --retry 5 -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.7/2019-03-27/bin/linux/amd64/aws-iam-authenticator
+    retry_command 20 curl --retry 5 -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.16.8/2020-04-16/bin/linux/amd64/aws-iam-authenticator
     chmod +x ./aws-iam-authenticator
     mv ./aws-iam-authenticator /usr/local/bin/
-    retry_command 20 curl --retry 5 -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.7/2019-03-27/bin/linux/amd64/kubectl
+    retry_command 20 curl --retry 5 -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.16.8/2020-04-16/bin/linux/amd64/kubectl
     chmod +x ./kubectl
     mv ./kubectl /usr/local/bin/
     cat > /etc/profile.d/kubectl.sh <<EOF
@@ -433,39 +443,28 @@ if [[ ":$PATH:" != *":/usr/local/bin:"* ]]; then     PATH="$PATH:/usr/local/bin"
 source <(kubectl completion bash)
 EOF
     chmod +x /etc//profile.d/kubectl.sh
-    retry_command 20 curl --retry 5 -o helm.tar.gz https://storage.googleapis.com/kubernetes-helm/helm-v2.13.1-linux-amd64.tar.gz
+    retry_command 20 curl --retry 5 -o helm.tar.gz https://get.helm.sh/helm-v3.2.0-linux-amd64.tar.gz
     tar -xvf helm.tar.gz
     chmod +x ./linux-amd64/helm
-    chmod +x ./linux-amd64/tiller
-    mv ./linux-amd64/helm /usr/local/bin/helm-client
-    mv ./linux-amd64/tiller /usr/local/bin/
+#    chmod +x ./linux-amd64/tiller
+    mv ./linux-amd64/helm /usr/local/bin/helm
+#    mv ./linux-amd64/tiller /usr/local/bin/
     rm -rf ./linux-amd64/
-    touch /var/log/tiller.log
-    chown ${user}:${user_group} /var/log/tiller.log
-    cat > /usr/local/bin/helm <<"EOF"
+#    touch /var/log/tiller.log
+#    chown ${user}:${user_group} /var/log/tiller.log
+#    cat > /usr/local/bin/helm <<"EOF"
 #!/bin/bash
-/usr/local/bin/tiller -listen 127.0.0.1:44134 -alsologtostderr -storage secret &>> /var/log/tiller.log &
+#/usr/local/bin/tiller -listen 127.0.0.1:44134 -alsologtostderr -storage secret &>> /var/log/tiller.log &
 # Give tiller a moment to come up
-sleep 2
-export HELM_HOST=127.0.0.1:44134
-/usr/local/bin/helm-client "$@"
-EXIT_CODE=$?
-kill %1
-exit ${EXIT_CODE}
-EOF
-    chmod +x /usr/local/bin/helm
-    su ${user} -c "/usr/local/bin/helm init --client-only"
-    su ${user} -c "/usr/local/bin/helm repo add suse https://kubernetes-charts.suse.com"
-}
-
-function install_cf_cli() {
-    orig_dir=$(pwd)
-    cd /tmp/
-    retry_command 20 curl -L --retry 5 -o cf.tar.gz "https://packages.cloudfoundry.org/stable?release=linux64-binary"
-    tar -xvf cf.tar.gz
-    mv ./cf /usr/local/bin/
-    rm cf.tar.gz
-    cd ${orig_dir}
+#sleep 2
+#export HELM_HOST=127.0.0.1:44134
+#/usr/local/bin/helm-client "$@"
+#EXIT_CODE=$?
+#kill %1
+#exit ${EXIT_CODE}
+#EOF
+#    chmod +x /usr/local/bin/helm
+ #   su ${user} -c "/usr/local/bin/helm init --client-only"
 }
 
 ##################################### End Function Definitions
@@ -527,8 +526,7 @@ if [[ ${ENABLE} == "true" ]];then
     else
         echo "BANNER_PATH = ${BANNER_PATH}"
         echo "Creating Banner in ${BANNER_FILE}"
-        echo "curl  -s ${BANNER_PATH} > ${BANNER_FILE}"
-        curl  -s ${BANNER_PATH} > ${BANNER_FILE}
+        aws s3 cp "${BANNER_PATH}" "${BANNER_FILE}"  --region ${BANNER_REGION}
         if [[ -e ${BANNER_FILE} ]] ;then
             echo "[INFO] Installing banner ... "
             echo -e "\n Banner ${BANNER_FILE}" >>/etc/ssh/sshd_config
@@ -573,7 +571,5 @@ prevent_process_snooping
 request_eip
 install_kubernetes_client_tools
 setup_kubeconfig
-install_cf_cli
-
 
 echo "Bootstrap complete."

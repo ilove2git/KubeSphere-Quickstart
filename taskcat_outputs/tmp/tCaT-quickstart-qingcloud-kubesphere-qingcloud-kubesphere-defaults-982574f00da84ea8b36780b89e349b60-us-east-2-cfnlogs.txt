@@ -1,0 +1,21 @@
+-----------------------------------------------------------------------------
+Region: us-east-2
+StackName: tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-982574f00da84ea8b36780b89e349b60
+*****************************************************************************
+ResourceStatusReason:  
+The following resource(s) failed to create: [VPCStack].
+*****************************************************************************
+*****************************************************************************
+Events:  
+TimeStamp                         ResourceStatus      ResourceType                LogicalResourceId                                                                                    ResourceStatusReason
+--------------------------------  ------------------  --------------------------  ---------------------------------------------------------------------------------------------------  ---------------------------------------------------------------------------------------------------------------------------------------------------
+2020-06-10 06:07:04.267000+00:00  CREATE_FAILED       AWS::CloudFormation::Stack  tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-982574f00da84ea8b36780b89e349b60  The following resource(s) failed to create: [VPCStack].
+2020-06-10 06:07:03.620000+00:00  CREATE_FAILED       AWS::CloudFormation::Stack  VPCStack                                                                                             S3 error: The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.
+                                                                                                                                                                                       For more information check http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html
+2020-06-10 06:07:03.168000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack  VPCStack
+2020-06-10 06:06:58.076000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack  tCaT-quickstart-qingcloud-kubesphere-qingcloud-kubesphere-defaults-982574f00da84ea8b36780b89e349b60  User Initiated
+*****************************************************************************
+-----------------------------------------------------------------------------
+Tested on: Wednesday, 10. June 2020 06:08AM
+-----------------------------------------------------------------------------
+

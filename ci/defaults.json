@@ -1,0 +1,46 @@
+[
+    {
+        "ParameterKey": "KeyPairName",
+        "ParameterValue": "armtest"
+    },
+    {
+        "ParameterKey": "RemoteAccessCIDR",
+        "ParameterValue": "10.0.0.0/16"
+    },
+    {
+        "ParameterKey": "AvailabilityZones",
+        "ParameterValue": "$[taskcat_genaz_3]"
+    },
+    {
+        "ParameterKey": "QSS3BucketName",
+        "ParameterValue": "$[taskcat_autobucket]"
+    }
+    #{
+    #    "ParameterKey": "KubeSphereLicenseKey",
+    #    "ParameterValue": "OVERRIDE"
+    #},
+#    {
+#        "ParameterKey": "NodeInstanceType",
+#        "ParameterValue": "t3.xlarge"
+#    },
+#    {
+#        "ParameterKey": "Openpitrix",
+#        "ParameterValue": false
+#    },
+#    {
+#        "ParameterKey": "Devops",
+#        "ParameterValue": false
+#    },
+#    {
+#        "ParameterKey": "Servicemesh",
+#        "ParameterValue": false
+#    },  
+#    {
+#        "ParameterKey": "Notification",
+#        "ParameterValue": false
+#    },
+#    {
+#        "ParameterKey": "Logging",
+#        "ParameterValue": false
+#    }       
+]
