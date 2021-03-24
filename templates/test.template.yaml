@@ -1,0 +1,6 @@
+Resources:
+  Test:
+    Type: "AWS::S3::Bucket"
+Outputs:
+  Test:
+    Value: '{{resolve:ssm:/aws/service/eks/optimized-ami/1.14/amazon-linux-2/recommended/image_id}}'
